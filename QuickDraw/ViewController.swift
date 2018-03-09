@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var seconds = 0
     var timeRemaining = 7
     var myAudioPlayer = AVAudioPlayer()
+    var resultTime = 0.0
     
     var startTime = Date().timeIntervalSince1970
     
@@ -73,10 +74,48 @@ class ViewController: UIViewController {
     
     @IBAction func stopClicked(_ sender: UIButton) {
         let endTime = Date().timeIntervalSince1970
-        // 1512538956.57195 seconds
         let elapsedTime = endTime - startTime
-        // 10.0014500617981 seconds
         resultLabel.text = "Time passed \(elapsedTime)"
+        
+        resultTime = elapsedTime - 5
+        
+        
+        // Add more conditions here for the draw evaluation
+        if resultTime <= 2 {
+            // Good job!
+            guard let url = Bundle.main.url(forResource: "gunshot", withExtension: "wav") else { return }
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                
+                myAudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+                
+                myAudioPlayer.play()
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        else {
+            
+            // You failed!
+            // Replace "gunshot" with a "failure" sound
+            
+            guard let url = Bundle.main.url(forResource: "gunshot", withExtension: "wav") else { return }
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                
+                myAudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+                
+                myAudioPlayer.play()
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
         
     }
     

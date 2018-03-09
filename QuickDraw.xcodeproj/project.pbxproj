@@ -15,6 +15,8 @@
 		5ACE58632051F9E100845B07 /* QuickDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE58622051F9E100845B07 /* QuickDrawTests.swift */; };
 		5ACE586E2051F9E200845B07 /* QuickDrawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE586D2051F9E200845B07 /* QuickDrawUITests.swift */; };
 		5ACE587C2052697000845B07 /* shortbuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE587B2052697000845B07 /* shortbuzz.wav */; };
+		5ACE587E2052728B00845B07 /* shortbuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE587D2052728B00845B07 /* shortbuzz.wav */; };
+		5ACE5880205272BE00845B07 /* gunshot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE587F205272BE00845B07 /* gunshot.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5ACE586D2051F9E200845B07 /* QuickDrawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDrawUITests.swift; sourceTree = "<group>"; };
 		5ACE586F2051F9E200845B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ACE587B2052697000845B07 /* shortbuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = shortbuzz.wav; path = ../../../../Downloads/shortbuzz.wav; sourceTree = "<group>"; };
+		5ACE587D2052728B00845B07 /* shortbuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = shortbuzz.wav; path = ../../../../../Downloads/shortbuzz.wav; sourceTree = "<group>"; };
+		5ACE587F205272BE00845B07 /* gunshot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gunshot.wav; path = ../../../../../Downloads/gunshot.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				5ACE584D2051F9E100845B07 /* AppDelegate.swift */,
+				5ACE587D2052728B00845B07 /* shortbuzz.wav */,
 				5ACE584F2051F9E100845B07 /* ViewController.swift */,
+				5ACE587F205272BE00845B07 /* gunshot.wav */,
 				5ACE58512051F9E100845B07 /* Main.storyboard */,
 				5ACE58542051F9E100845B07 /* Assets.xcassets */,
 				5ACE58562051F9E100845B07 /* LaunchScreen.storyboard */,
@@ -237,6 +243,8 @@
 			files = (
 				5ACE587C2052697000845B07 /* shortbuzz.wav in Resources */,
 				5ACE58582051F9E100845B07 /* LaunchScreen.storyboard in Resources */,
+				5ACE587E2052728B00845B07 /* shortbuzz.wav in Resources */,
+				5ACE5880205272BE00845B07 /* gunshot.wav in Resources */,
 				5ACE58552051F9E100845B07 /* Assets.xcassets in Resources */,
 				5ACE58532051F9E100845B07 /* Main.storyboard in Resources */,
 			);
