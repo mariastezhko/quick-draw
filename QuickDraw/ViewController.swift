@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     var seconds = 0
     var timeRemaining = 7
+    var myAudioPlayer = AVAudioPlayer()
     
     var startTime = Date().timeIntervalSince1970
     
@@ -47,17 +49,28 @@ class ViewController: UIViewController {
     @IBAction func startClicked(_ sender: UIButton) {
         
         rndNum = Int(arc4random_uniform(11))
+  
         
-        startTime = Date().timeIntervalSince1970
-        // 1512538946.5705 seconds
+         startTime = Date().timeIntervalSince1970
+        //func start(atTime time: TimeInterval) -> Bool {
+            let playbackDelay = 7.0
+        let path = Bundle.main.path(forResource: "shortbuzz.wav", ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+        do {
+            myAudioPlayer = try AVAudioPlayer(contentsOf: url)
+            myAudioPlayer.play(atTime: myAudioPlayer.deviceCurrentTime+playbackDelay)
+        } catch {
+            print("Couldn't load file")
+        }
+        //}
         
-        // time passes (about 10 seconds)
-        
-        
-        
-        
-        
-        
+    }
+    
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
     
     @IBAction func stopClicked(_ sender: UIButton) {
@@ -103,4 +116,15 @@ class ViewController: UIViewController {
         return 180/Double.pi * radians
     }
     
+}
+func degrees(_ radians: Double) -> Double {
+    return 180/Double.pi * radians
+}
+//Inplement handleDeviceMotionUpdate function
+func handleDeviceMotionUpdate(deviceMotion:CMDeviceMotion) {
+    print("MOTION FUNCTION")
+    var attitude = deviceMotion.attitude
+    var roll = degrees(attitude.roll)
+    var pitch = degrees(attitude.pitch)
+    var yaw = degrees(attitude.yaw)
 }
