@@ -10,15 +10,17 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
+
 class ViewController: UIViewController {
-    
+    var bool = false
     var rndNum = 0;
     var timer = Timer()
     var seconds = 0
     var timeRemaining = 7
     var myAudioPlayer = AVAudioPlayer()
     var resultTime = 0.0
-    
+    var statement = ""
+
     var startTime = Date().timeIntervalSince1970
     
     @IBOutlet weak var resultLabel: UILabel!
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func startClicked(_ sender: UIButton) {
-        
+        bool = false
         rndNum = Int(arc4random_uniform(11))
         startTime = Date().timeIntervalSince1970
        
@@ -73,9 +75,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func stopClicked(_ sender: UIButton) {
+        bool = true
         let endTime = Date().timeIntervalSince1970
         let elapsedTime = endTime - startTime
-        resultLabel.text = "Time passed \(elapsedTime)"
+        print("statement at stopClicked:", statement)
+        resultLabel.text = "Time passed \(elapsedTime) Shot: \(statement)"
         
         resultTime = elapsedTime - 5
         
@@ -130,6 +134,31 @@ class ViewController: UIViewController {
             
             if let mydata = data {
                 print("mydata", mydata.gravity)
+                let x = mydata.gravity.x
+                print("x: ", roundNum(double: x, to: 3))
+                // x approx 0.02
+                //                x 0.02
+                let y = mydata.gravity.y
+                print("y: ", roundNum(double: y, to: 3))
+                //                y approx 0.02
+                //                y approx 1
+                let z = mydata.gravity.z
+                print("z: ", roundNum(double: z, to: 3))
+                //z approx -1
+                //                z approx0.03
+                if self.bool {
+                    self.statement = "The roll of your shot was \(x), the pitch of your shot was \(y), the yaw of your shot was \(z)"
+                    let endTime = Date().timeIntervalSince1970
+                    let elapsedTime = endTime - self.startTime
+                    print("statement at stopClicked:", self.statement)
+                    self.resultLabel.text = "Time passed \(elapsedTime) Shot: \(self.statement)"
+                    print("STATEMENT: ", self.statement)
+                    print(StopMotion(x1: x, y1: y, z1: z))
+                }
+                else {
+                      self.statement = ""
+                    }
+
                 //                print("pitch raw", mydata.attitude.pitch)
                 //                print("pitch", self.degrees(mydata.attitude.pitch))
             }
@@ -153,3 +182,4 @@ func handleDeviceMotionUpdate(deviceMotion:CMDeviceMotion) {
     var pitch = degrees(attitude.pitch)
     var yaw = degrees(attitude.yaw)
 }
+

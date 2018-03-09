@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" red="0.18871274906709121" green="0.61067033678756477" blue="0.21183598715332774" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="tintColor" red="0.45652184078196018" green="0.66829258419689119" blue="0.15115920110662751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Duel">
                                     <color key="titleColor" red="0.9771554938" green="1" blue="0.97872447529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -38,13 +38,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSC-4D-u8i">
                                 <rect key="frame" x="50" y="512" width="275" height="125"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.28051159549999999" blue="0.39370207470000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="w06-9a-d9d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="59"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Stop">
+                                <color key="tintColor" red="1" green="0.28051159548341609" blue="0.39370207471272711" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Trigger">
                                     <color key="titleColor" red="0.9771554938" green="1" blue="0.97872447529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
