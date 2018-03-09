@@ -49,29 +49,27 @@ class ViewController: UIViewController {
     @IBAction func startClicked(_ sender: UIButton) {
         
         rndNum = Int(arc4random_uniform(11))
-  
-        
-         startTime = Date().timeIntervalSince1970
-        //func start(atTime time: TimeInterval) -> Bool {
-            let playbackDelay = 7.0
-        let path = Bundle.main.path(forResource: "shortbuzz.wav", ofType: nil)!
-        let url = URL(fileURLWithPath: path)
+        startTime = Date().timeIntervalSince1970
+       
+        let playbackDelay = 5.0
+
+        guard let url = Bundle.main.url(forResource: "shortbuzz", withExtension: "wav") else { return }
         do {
-            myAudioPlayer = try AVAudioPlayer(contentsOf: url)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            
+            myAudioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
             myAudioPlayer.play(atTime: myAudioPlayer.deviceCurrentTime+playbackDelay)
-        } catch {
-            print("Couldn't load file")
+            
+        } catch let error {
+            print(error.localizedDescription)
         }
-        //}
-        
     }
     
     
-    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            completion()
-        }
-    }
+    
     
     @IBAction func stopClicked(_ sender: UIButton) {
         let endTime = Date().timeIntervalSince1970
@@ -82,18 +80,6 @@ class ViewController: UIViewController {
         
     }
     
-//    func delay(delay:Double, closure:()->()) {
-//        dispatch_after(
-//            dispatch_time( dispatch_time_t(DISPATCH_TIME_NOW), Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
-//    }
-//
-//    func loginFunc() {
-//
-//        delay(10.0){
-//            //time is up, show network error
-//            //return should break out of the function (not tested)
-//            return
-//        }
 
     
     func startReadingMotionData() {

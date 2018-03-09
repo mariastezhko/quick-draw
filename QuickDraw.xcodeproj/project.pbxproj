@@ -14,6 +14,7 @@
 		5ACE58582051F9E100845B07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE58562051F9E100845B07 /* LaunchScreen.storyboard */; };
 		5ACE58632051F9E100845B07 /* QuickDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE58622051F9E100845B07 /* QuickDrawTests.swift */; };
 		5ACE586E2051F9E200845B07 /* QuickDrawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE586D2051F9E200845B07 /* QuickDrawUITests.swift */; };
+		5ACE587C2052697000845B07 /* shortbuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE587B2052697000845B07 /* shortbuzz.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5ACE58692051F9E100845B07 /* QuickDrawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickDrawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACE586D2051F9E200845B07 /* QuickDrawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickDrawUITests.swift; sourceTree = "<group>"; };
 		5ACE586F2051F9E200845B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ACE587B2052697000845B07 /* shortbuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = shortbuzz.wav; path = ../../../../Downloads/shortbuzz.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		5ACE58412051F9E100845B07 = {
 			isa = PBXGroup;
 			children = (
+				5ACE587B2052697000845B07 /* shortbuzz.wav */,
 				5ACE584C2051F9E100845B07 /* QuickDraw */,
 				5ACE58612051F9E100845B07 /* QuickDrawTests */,
 				5ACE586C2051F9E200845B07 /* QuickDrawUITests */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACE587C2052697000845B07 /* shortbuzz.wav in Resources */,
 				5ACE58582051F9E100845B07 /* LaunchScreen.storyboard in Resources */,
 				5ACE58552051F9E100845B07 /* Assets.xcassets in Resources */,
 				5ACE58532051F9E100845B07 /* Main.storyboard in Resources */,
